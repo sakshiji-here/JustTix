@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @theme {
   --color-primary: #f84565;
@@ -18,4 +16,8 @@
 body {
   color: white;
   background-color: #09090b;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
 }
