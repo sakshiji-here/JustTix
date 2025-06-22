@@ -117,7 +117,7 @@ const SeatLayout = () => {
 
         <button
           onClick={() => navigate("/my-bookings")}
-          className="flex items-center gap-1 mt-20 px-10 py-3 tex-sm bg-primary hover;bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95"
+          className="flex items-center gap-1 mt-20 px-10 py-3 tex-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95"
         >
           Proceed to Checkout
           <ArrowRightIcon strokeWidth={3} className="w-4 h-4" />
