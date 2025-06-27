@@ -66,7 +66,7 @@ const NavBar = () => {
         >
           Releases
         </Link>
-        {favoriteMovies.length > 0 && (
+        {Array.isArray(favoriteMovies) && (
           <Link
             onClick={() => {
               scrollTo(0, 0);
