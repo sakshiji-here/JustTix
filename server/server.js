@@ -11,7 +11,6 @@ import adminRouter from "./routes/adminRoutes.js";
 import userRouter from "./routes/userRoute.js";
 
 const app = express();
-const port = 3000;
 
 await connectDB();
 
@@ -20,7 +19,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "https://just-tix.vercel.app",
-    credentials: true, // only if you're using cookies or headers like Authorization
+    credentials: true,
   })
 );
 app.use(clerkMiddleware());
@@ -33,6 +32,4 @@ app.use("/api/booking", bookingRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api", userRouter);
 
-app.listen(port, () =>
-  console.log(`Server listening at http://localhost:${port}`)
-);
+export default app;
