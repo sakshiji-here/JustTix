@@ -42,7 +42,7 @@ const MovieDetails = () => {
       const { data } = await axios.post(
         "/api/update-favorite",
         { movieId: id },
-        { header: { Authorization: `Bearer ${await getToken()}` } }
+        { headers: { Authorization: `Bearer ${await getToken()}` } }
       );
 
       if (data.success) {
