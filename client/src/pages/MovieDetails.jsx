@@ -40,7 +40,7 @@ const MovieDetails = () => {
       if (!user) return toast.error("Please login to proceed");
 
       const { data } = await axios.post(
-        "/api/user/update-favorite",
+        "/api/update-favorite",
         { movieId: id },
         { header: { Authorization: `Bearer ${await getToken()}` } }
       );
@@ -99,15 +99,14 @@ const MovieDetails = () => {
               onClick={handleFavorite}
               className="bg-gray-700 p-2.5 rounded-full transition cursor-pointer active:scale-95"
             >
-<Heart
-  className={`w-5 h-5 ${
-    Array.isArray(favoriteMovies) &&
-    favoriteMovies.find((movie) => movie._id === id)
-      ? "fill-primary text-primary"
-      : ""
-  }`}
-/>
-
+              <Heart
+                className={`w-5 h-5 ${
+                  Array.isArray(favoriteMovies) &&
+                  favoriteMovies.find((movie) => movie._id === id)
+                    ? "fill-primary text-primary"
+                    : ""
+                }`}
+              />
             </button>
           </div>
         </div>
@@ -118,19 +117,18 @@ const MovieDetails = () => {
         <div className="flex items-center gap-4 w-max px-4">
           {show.movie.casts.slice(0, 10).map((cast, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-
               {cast.profile_path ? (
-  <img
-    src={image_base_url + cast.profile_path}
-    alt={cast.name}
-    className="rounded-full h-20 md:h-20 aspect-square object-cover"
-  />
-) : (
-  <div className="rounded-full h-20 w-20 bg-gray-700 flex items-center justify-center text-xs text-white">
-    No Image
-  </div>
-)}
-              
+                <img
+                  src={image_base_url + cast.profile_path}
+                  alt={cast.name}
+                  className="rounded-full h-20 md:h-20 aspect-square object-cover"
+                />
+              ) : (
+                <div className="rounded-full h-20 w-20 bg-gray-700 flex items-center justify-center text-xs text-white">
+                  No Image
+                </div>
+              )}
+
               <p className="font-medium text-xs mt-3">{cast.name}</p>
             </div>
           ))}

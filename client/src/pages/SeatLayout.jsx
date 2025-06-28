@@ -22,7 +22,7 @@ const SeatLayout = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [selectedTime, setSelectedTime] = useState(null);
   const [show, setShow] = useState(null);
-  const [occuppiedSeats, setOccupiedSeats] = useState([]);
+  const [occupiedSeats, setOccupiedSeats] = useState([]);
 
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const SeatLayout = () => {
     if (!selectedSeats.includes(seatId) && selectedSeats.length > 4) {
       return toast("You can only select 5 seats");
     }
-    if (occuppiedSeats.includes(seatId)) {
+    if (occupiedSeats.includes(seatId)) {
       return toast("This seat is already booked");
     }
 
@@ -69,7 +69,7 @@ const SeatLayout = () => {
               className={`h-8 w-8 rounded border border-primary/60 cursor-pointer 
               ${selectedSeats.includes(seatId) && "bg-primary text-white"} ${
                 Array.isArray(occupiedSeats) &&
-                occuppiedSeats.includes(seatId) &&
+                occupiedSeats.includes(seatId) &&
                 "opacity-50"
               }`}
             >
@@ -87,7 +87,7 @@ const SeatLayout = () => {
         `/api/booking/seats/${selectedTime.showId}`
       );
       if (data.success) {
-        setOccupiedSeats(data.occuppiedSeats);
+        setOccupiedSeats(data.occupiedSeats);
       } else {
         toast.error(data.message);
       }
