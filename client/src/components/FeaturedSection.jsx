@@ -26,6 +26,7 @@ const FeaturedSection = () => {
           {shows.slice(0, 4).map((show) => (
             <MovieCard key={show._id} movie={show} />
           ))}
+
         </div>
       </div>
       <div className="flex justify-center mt-20">
