@@ -33,7 +33,7 @@ const movieSchema = new mongoose.Schema(
         character: String,
         credit_id: String,
         order: Number,
-      }Add commentMore actions
+      }
     ],
     vote_average: { type: Number, required: true },
     runtime: { type: Number, required: true },
