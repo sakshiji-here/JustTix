@@ -106,7 +106,7 @@ const SeatLayout = () => {
         return toast.error("Please select a time and seats");
 
       const { data } = await axios.post(
-        "/api/bookings/create",
+        "/api/booking/create",
         { showId: selectedTime.showId, selectedSeats },
         { header: { Authorization: `Bearer ${await getToken()}` } }
       );
